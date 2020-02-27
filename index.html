@@ -15,15 +15,28 @@
       margin: 0;
     }
 
+    .background {
+      border: 1px solid black;
+      height: 700px;
+      width: 1000px;
+      margin: 5px;
+      position: relative
+    }
+
     .redSquare {
-      height: 100px;
-      width: 100px;
+      height: 100px; width: 100px;
       background-color: red;
+      border: 1px solid purple;
+      transform: translate(-50%, -50%);
+      top: 350px; left: 500px;
+      position: absolute
     }
   </style>
 
 </head>
 <body>
-  <div class="redSquare"></div>
+  <div class="background">
+    <div class="redSquare"></div>
+  </div>
 </body>
 </html>
