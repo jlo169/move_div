@@ -3,6 +3,10 @@ $(document).ready(initializeApp);
 
 const colors = ['red', 'blue', 'yellow', 'green'];
 let colorIndex = 0;
+const background = $('.background');
+const square = $('.redSquare');
+const keyPressed = {};
+const distance = 3;
 
 console.log('outside the initialize app')
 
@@ -17,5 +21,4 @@ function colorDiv() {
   } 
 
   $('.redSquare').css('background-color', colors[colorIndex]);
-  console.log('pug pug')
 }
