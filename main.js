@@ -10,6 +10,8 @@ const distance = 3;
 
 function initializeApp() {
   $('.redSquare').on('click', colorDiv);
+  $(window).keydown((sand) => {keyPressed[sand.which] = true});
+  $(window).keyup((sand) => {keyPressed[sand.which] = false});
 }
 
 function colorDiv() {
@@ -24,3 +26,4 @@ function colorDiv() {
 function moveDaDiv(oVal, key1, key2) {
   const nVal = parseInt(oVal, 10);
 }
+
