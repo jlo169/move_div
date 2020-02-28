@@ -4,12 +4,12 @@ $(document).ready(initializeApp);
 const colors = ['red', 'blue', 'yellow', 'green'];
 let colorIndex = 0;
 const background = $('.background');
-const square = $('.redSquare');
+const square = $('.square');
 const keyPressed = {};
 const distance = 3;
 
 function initializeApp() {
-  $('.redSquare').on('click', colorDiv);
+  $('.square').on('click', colorDiv);
   $(window).keydown((sand) => {keyPressed[sand.which] = true});
   $(window).keyup((sand) => {keyPressed[sand.which] = false});
 }
@@ -20,7 +20,7 @@ function colorDiv() {
     colorIndex = 0;
   } 
 
-  $('.redSquare').css('background-color', colors[colorIndex]);
+  $('.square').css('background-color', colors[colorIndex]);
 }
 
 function moveDaDiv(oVal, key1, key2) {
