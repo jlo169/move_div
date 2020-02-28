@@ -3,9 +3,7 @@ $(document).ready(initializeApp);
 
 const colors = ['red', 'blue', 'yellow', 'green'];
 let colorIndex = 0;
-const background = $('.background');
-const square = $('.square');
-const maxValue = background.width() - square.width();
+const maxValue = $('.background').width() - $('.square').width();
 const keyPressed = {};
 const distance = 10;
 
