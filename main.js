@@ -7,21 +7,32 @@ const background = $('.background');
 const square = $('.square');
 const maxValue = background.width() - square.width();
 const keyPressed = {};
-const distance = 3;
+const distance = 10;
 
 function initializeApp() {
-  square.on('click', colorDiv);
+  $('.square').on('click', colorDiv);
   $(window).keydown((sand) => {keyPressed[sand.which] = true});
   $(window).keyup((sand) => {keyPressed[sand.which] = false});
+
+  setInterval(function() {
+    $('.square').css({
+      left: (index, oVal) => {
+        return moveDaDiv(oVal, 37, 39);
+      },
+      top: (index, oVal) => {
+        return moveDaDiv(oVal, 38, 40);
+      }
+    })
+  }, 10);
 }
 
 function colorDiv() {
+  console.log('inside colorDiv')
   colorIndex++;
   if (colorIndex === colors.length) {
     colorIndex = 0;
   } 
-
-  square.css('background-color', colors[colorIndex]);
+  $('.square').css('background-color', colors[colorIndex]);
 }
 
 function moveDaDiv(oVal, key1, key2) {
@@ -30,4 +41,6 @@ function moveDaDiv(oVal, key1, key2) {
     + (keyPressed[key2] ? distance : 0);
   return nVal < 0 ? 0 : nVal > maxValue ? maxValue : nVal;
 }
+
+
 
