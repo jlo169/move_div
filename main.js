@@ -8,8 +8,6 @@ const square = $('.redSquare');
 const keyPressed = {};
 const distance = 3;
 
-console.log('outside the initialize app')
-
 function initializeApp() {
   $('.redSquare').on('click', colorDiv);
 }
@@ -21,4 +19,8 @@ function colorDiv() {
   } 
 
   $('.redSquare').css('background-color', colors[colorIndex]);
+}
+
+function moveDaDiv(oVal, key1, key2) {
+  const nVal = parseInt(oVal, 10);
 }
