@@ -12,8 +12,8 @@ function initializeApp() {
   $('.square').on('click', colorDiv);
   $(window).keydown((sand) => {keyPressed[sand.which] = true});
   $(window).keyup((sand) => {keyPressed[sand.which] = false});
-  maxValueX = $('.background').height() - $('.square').height();
-  maxValueY = $('.background').width() - ($('.square').width());
+  maxValueX = $('.background').height() - ($('.square').height() - 50);
+  maxValueY = $('.background').width() - ($('.square').width() - 50);
   console.log('maxValueX is', maxValueX);
   console.log('maxValueY is', maxValueY);
 
@@ -41,7 +41,7 @@ function moveDaDiv(oVal, key1, key2, maxValue) {
   const nVal = parseInt(oVal, 10)
     - (keyPressed[key1] ? distance : 0)
     + (keyPressed[key2] ? distance : 0);
-  return nVal < 0 ? 0 : nVal > maxValue ? maxValue : nVal;
+  return nVal < 50 ? 50 : nVal > maxValue ? maxValue : nVal;
 }
 
 
